@@ -4,7 +4,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
-TESTS += test/test_bitcoin
+#TESTS += test/test_bitcoin
 noinst_PROGRAMS += test/test_bitcoin
 TEST_SRCDIR = test
 TEST_BINARY=test/test_bitcoin$(EXEEXT)

@@ -1,0 +1,26 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+ #  runs-on: ubuntu-latest
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: configure
+      run: ./zcutil/build.sh
+    - name: get blockchain params
+      run: ./zcutil/fetch-params.sh
+    - name: make
+      run: make
+    - name: make check
+      run: make check
+    - name: clean up home dir
+      run: rm -rf ~/.zcash-params
